@@ -16,7 +16,6 @@ https://github.com/ProgTosya/Employee/assets/110400557/3e1bdf0b-ca53-423d-a455-c
 - DB_CONNECTION=pgsql
 - DB_HOST=127.0.0.1
 - DB_PORT=5432
-- DB_SCHEMA=treeview
 - DB_DATABASE=Employees
 - DB_USERNAME=postgres
 - DB_PASSWORD=password
