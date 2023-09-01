@@ -1,6 +1,8 @@
 # Исправленная версия 
 
-https://github.com/ProgTosya/Employee/assets/110400557/3e1bdf0b-ca53-423d-a455-ce99b200a0d2
+https://github.com/ProgTosya/Employees/assets/110400557/9a34ccc4-f782-4846-bb36-7c0b4301026c
+
+
 ## Установка
 Перед установкой обновить .env файл
 - composer install
