@@ -20,6 +20,7 @@ https://github.com/ProgTosya/Employee/assets/110400557/3e1bdf0b-ca53-423d-a455-c
 - DB_DATABASE=Employees
 - DB_USERNAME=postgres
 - DB_PASSWORD=password
+#
 - BROADCAST_DRIVER=log
 - CACHE_DRIVER=file
 - FILESYSTEM_DISK=local
