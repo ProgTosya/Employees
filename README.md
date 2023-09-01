@@ -7,6 +7,7 @@ https://github.com/ProgTosya/Employee/assets/110400557/3e1bdf0b-ca53-423d-a455-c
 - npm install
 - php artisan migrate
 - php artisan db:seed
+- php artisan key:generate
 - php artisan serve
 - npm run dev
 ### После заполнения БД 
