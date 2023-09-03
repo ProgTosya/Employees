@@ -40,7 +40,8 @@ class EmployeesResourceController extends Controller
         $offset = max($offset, 0);
         $collection->offset($offset);
 
-        return $collection->get();
+        return response()->json($collection->get());
+
     }
 
     /**
@@ -66,7 +67,7 @@ class EmployeesResourceController extends Controller
         $file_name = time().'.'.$request->image->extension();
         $request->image->move(public_path('/storage/avatar/'), 'avatar'.$file_name);
         $file_path = '/storage/avatar/avatar'.$file_name;
-        Employees::create([
+        $employee = Employees::create([
             'name' => $request->name,
             'sur_name' => $request->sur_name,
             'father_name' => $request->father_name,
@@ -90,6 +91,7 @@ class EmployeesResourceController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'Post created',
+            'employee' => $employee,
         ], 201);
 
     }
@@ -162,7 +164,7 @@ class EmployeesResourceController extends Controller
             'success' => true,
             'message' => 'Post updated',
             'data' => $employee
-        ], 200);
+        ], 202);
     }
 
     /**
@@ -224,5 +226,12 @@ class EmployeesResourceController extends Controller
         DB::table('employees')
             ->where('employee_id', '=', $new_boss->employee_id)
             ->update(['boss_id' => 0,'rank_level' => 0, 'subordinates' => json_encode(array_values($first_boss))]);
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Boss update',
+                'old boss' => $old_boss,
+                'new boss' => $new_boss,
+            ], 200);
     }
 }

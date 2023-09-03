@@ -13,6 +13,11 @@ class EmployeesTreeController extends Controller
     {
         $boss = Employees::all()->where('rank_level', 0)->first();
         return $boss;
+        return response()->json([
+            'success' => true,
+            'message' => 'Main boss',
+            $boss,
+        ], 200);
     }
 
     public function getEmployee($id) {
