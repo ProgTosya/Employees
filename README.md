@@ -1,12 +1,15 @@
 # Исправленная версия 
 
-https://github.com/ProgTosya/Employee/assets/110400557/3e1bdf0b-ca53-423d-a455-ce99b200a0d2
+https://github.com/ProgTosya/Employees/assets/110400557/9a34ccc4-f782-4846-bb36-7c0b4301026c
+
+
 ## Установка
 Перед установкой обновить .env файл
 - composer install
 - npm install
 - php artisan migrate
 - php artisan db:seed
+- php artisan key:generate
 - php artisan serve
 - npm run dev
 ### После заполнения БД 
@@ -19,7 +22,19 @@ https://github.com/ProgTosya/Employee/assets/110400557/3e1bdf0b-ca53-423d-a455-c
 - DB_DATABASE=Employees
 - DB_USERNAME=postgres
 - DB_PASSWORD=password
-
+#
+- BROADCAST_DRIVER=log
+- CACHE_DRIVER=file
+- FILESYSTEM_DISK=local
+- QUEUE_CONNECTION=sync
+- SESSION_DRIVER=cookie
+- SESSION_LIFETIME=120
+- MEMCACHED_HOST=127.0.0.1
+- REDIS_HOST=127.0.0.1
+- REDIS_PASSWORD=null
+- REDIS_PORT=6379
+- SESSION_DOMAIN=localhost
+- SANCTUM_STATEFUL_DOMAINS=localhost:8000
 ## Использование 
 
 После установки пользователя перенаправляет на главную страницу. На ней расположенна карточка генерального директора и возможность авторизации/регистрации. При нажатии на карточку генерального директора открывается список его подчинённых. При нажатии на каждого сотрудника подгружается список его подчинённых.
