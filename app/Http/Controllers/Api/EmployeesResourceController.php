@@ -49,7 +49,7 @@ class EmployeesResourceController extends Controller
      */
     public function create()
     {
-        return view('components.createEmployee');
+        
     }
 
     /**
