@@ -120,8 +120,8 @@ class EmployeesResourceController extends Controller
     public function update(Request $request, $id)
     {
         $employee = Employees::find($id);
-
-        $rank_lvl = DB::table('employees')
+        if ($employee){
+            $rank_lvl = DB::table('employees')
                 ->where('employee_id', $request->boss_id)
                 ->get('rank_level')
                 ->value('rank_level') + 1;
@@ -164,7 +164,12 @@ class EmployeesResourceController extends Controller
             'success' => true,
             'message' => 'Post updated',
             'data' => $employee
-        ], 202);
+        ], 202);} else {
+            return response()->json([
+                'success' => false,
+                'message' => 'not found',], 204);
+        }
+
     }
 
     /**
@@ -173,11 +178,17 @@ class EmployeesResourceController extends Controller
     public function destroy($id)
     {
         $employee = Employees::find($id);
+        if ($employee){
         $employee->delete();
         return response()->json([
             'success' => true,
             'message' => 'Post deleted'
         ], 200);
+    } else {
+        return response()->json([
+            'success' => false,
+            'message' => 'not found',], 204);
+    }
     }
 
     private function getValidate(Request $request, $id = null): void
