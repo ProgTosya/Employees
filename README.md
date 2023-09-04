@@ -37,6 +37,8 @@ https://github.com/ProgTosya/Employees/assets/110400557/9a34ccc4-f782-4846-bb36-
 - SANCTUM_STATEFUL_DOMAINS=localhost:8000
 
 ## Rest Api 
+Запросы к БД через axios(get, post, put, delete) реализованы в create и edit шаблонах Vue. В остальных, данные на сервер отправляются через fetch()
+
 Для использования в Postman 
 - php artisan tinker
 - $user=User::first();
